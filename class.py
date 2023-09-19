@@ -113,3 +113,10 @@ df
 
 list_1=[1,2,3,4,5]
 list_1[0:2]
+
+####第三堂課東西
+obs1={"name":"john","age":36,"birthday":"01/01/1985"}
+obs2={"name":"amy","age":36,"birthday":"01/01/1985"}
+obs3={"name":"peter","age":36,"birthday":"01/01/1985"}
+
+data=[obs1,obs2,obs3]

@@ -76,6 +76,26 @@ print(dict_example)
 ###不用再回存
 ########################
 ###numpy array 特性
-X=np.ones(3)
+X=np.ones(3)  ####全部都是1的vector
 y=np.array([2,4,6])
-#p.array((2,4,6))
+y
+print(X@y)
+#p.array((2,4,6)) 裡面放tuple 也可以
+####這些東西都可以進行martix的運算
+
+
+A = np.array(
+    ((1, 2),
+     (3, 4))
+     )
+I = np.identity(3)
+ones = np.ones((3, 2))
+
+A, I, ones
+####從比較大的資料夾某個method，裡面的東西
+from numpy.linalg import inv
+inv(A)
+A.shape
+A.reshape(4,1)
+A.reshape(2,2)
+##改變維度

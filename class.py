@@ -99,3 +99,17 @@ A.shape
 A.reshape(4,1)
 A.reshape(2,2)
 ##改變維度
+
+import pandas as pd
+
+# create data frame
+df = pd.DataFrame({
+    "name": ["John", "Jane", "Mary"],
+    "age": [36, 24, 30],
+    "birthday": ["01/01/1985", "01/01/1997", "01/01/1991"]
+})
+
+df
+
+list_1=[1,2,3,4,5]
+list_1[0:2]

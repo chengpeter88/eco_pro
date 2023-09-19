@@ -27,3 +27,21 @@ b=2###把other value 放入b 但也會改變a記憶體位子東西
 ###有些特別例子
 
 ###list dic 都是mutability  注意會改記憶體中的東西
+
+a=[1,2,3]
+a[0]=10
+###list 特性可以改裡面的東西
+
+list_ex=[1,2,3,4,5]
+dic_ex={"name":"peter","age":36,"birthday":"01/01/1995"}
+
+
+import numpy as np
+game={
+    ("top","left"): np.array([2, 4]),
+    ("top","right"): np.array([0, 2]),
+    ("bottom","left"): np.array([4, 2]),
+    ("bottom","right"): np.array([2, 0])
+    }
+
+game[("top","left")]

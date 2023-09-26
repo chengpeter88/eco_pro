@@ -137,12 +137,6 @@ def Dev(f):
 
 
 
-
-######
-import olg2 as olg  
-ce = olg.consumer_example() 
-
-ce["beta"], ce["u"](1.2)
 ########
 class Consumer:
     def __init__(self, beta, u):
@@ -152,4 +146,6 @@ class Consumer:
         return (self.beta/(1+self.beta))*w
 
 import numpy as np
-ce = Consumer(0.9, lambda c: np.log(c)) # a lambda function example
+ce = Consumer(0.9, lambda c: np.log(c)) 
+# a lambda function example
+ce

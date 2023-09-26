@@ -134,9 +134,6 @@ def Dev(f):
         return (f(x+h)-f(x))/h
     return df
 
-
-
-
 ########
 class Consumer:
     def __init__(self, beta, u):

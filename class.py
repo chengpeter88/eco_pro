@@ -120,3 +120,39 @@ obs2={"name":"amy","age":36,"birthday":"01/01/1985"}
 obs3={"name":"peter","age":36,"birthday":"01/01/1985"}
 
 data=[obs1,obs2,obs3]
+#####json
+import json
+with open("foodpandaMenu_a0ab.json") as f:
+    data=json.load(f)
+data
+#### 確認執行os位子
+import os
+os.getcwd()
+### "../foodpandaMenu_a0ab.json" 點點可以回到上層
+###注意相對路徑或是絕對路徑
+
+import pandas as pd
+
+df = pd.read_csv("https://raw.githubusercontent.com/tpemartin/"\
+                 "github-data/master/Cornwell%20and%20Rupert.csv")
+
+
+###w代表讀寫，b代表二元
+import pickle  
+
+# Save a dictionary into a pickle file.  
+favorite_color = { "lion": "yellow", "kitty": "red" }  
+with open( "save.p", "wb" ) as f:  
+    pickle.dump(favorite_color, f)   
+
+
+# To load the dictionary back from the pickle file.  
+with open( "save.p", "rb" ) as f:
+    favorite_color = pickle.load(f)
+###相對路徑產生
+
+#####經濟模型
+olg_consumer = {
+    "beta" : 0.96,
+    "u": lambda c: np.log(c) # anonymous function
+}

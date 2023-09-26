@@ -91,4 +91,30 @@ consumer = {
 
 def cd(x,y,alpha):
     return x**alpha*y**(1-alpha)
+alpha=0.3
+cd(3,4)
+########
 cd(3,4,0.5)
+########
+def Cobb_Douglas(alpha):
+    def cd(x, y):
+        return x**alpha*y**(1-alpha)
+    return cd
+cd = Cobb_Douglas(0.3)
+cd(1, 2), cd(3,7)
+#######
+def ces_para(sigma,alpha):
+    def ces(x, y):
+        return (alpha*x**(-sigma)+(1-alpha)*y**(-sigma))**(-1/sigma)
+    return ces
+
+ces=ces_para(0.5,0.7)
+ces(1,2)
+
+
+import numpy as np 
+x = np.array([1.0, 2.0, 3.0])
+sigma = 0.5
+alpha = np.array([0.7, 0.2, 0.1])
+x**(-sigma)*alpha
+sum(x**(-sigma)*alpha)

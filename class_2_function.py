@@ -111,10 +111,21 @@ def ces_para(sigma,alpha):
 ces=ces_para(0.5,0.7)
 ces(1,2)
 
-
+########CES general try
 import numpy as np 
 x = np.array([1.0, 2.0, 3.0])
 sigma = 0.5
 alpha = np.array([0.7, 0.2, 0.1])
 x**(-sigma)*alpha
 sum(x**(-sigma)*alpha)
+
+def dev(f,x,h=0.000001):
+    return (f(x+h)-f(x))/h
+
+def Dev(f):
+    def df(x,h=1e-5):
+        return (f(x+h)-f(x))/h
+    return df
+
+
+def fun

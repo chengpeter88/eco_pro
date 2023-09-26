@@ -1,6 +1,5 @@
 from IPython.core.interactiveshell import InteractiveShell
 InteractiveShell.ast_node_interactivity = "all"
-
 ###
 
 ######
@@ -119,6 +118,14 @@ alpha = np.array([0.7, 0.2, 0.1])
 x**(-sigma)*alpha
 sum(x**(-sigma)*alpha)
 
+def ces_ge_par(alpha,sigma):
+    sigma = 0.5
+    alpha = np.array([0.7, 0.2, 0.1])
+    def ces_ge(X):
+        X=np.array([])
+    return sum(x**(-sigma)*alpha)^(-1/sigma)
+
+
 def dev(f,x,h=0.000001):
     return (f(x+h)-f(x))/h
 
@@ -128,4 +135,21 @@ def Dev(f):
     return df
 
 
-def fun
+
+
+
+######
+import olg2 as olg  
+ce = olg.consumer_example() 
+
+ce["beta"], ce["u"](1.2)
+########
+class Consumer:
+    def __init__(self, beta, u):
+        self.beta = beta # self is mutable. 
+        self.u = u
+    def saving(self, w, R):
+        return (self.beta/(1+self.beta))*w
+
+import numpy as np
+ce = Consumer(0.9, lambda c: np.log(c)) # a lambda function example

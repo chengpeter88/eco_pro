@@ -190,3 +190,131 @@ plt.grid(True)
 plt.xlim(-10, 10)
 plt.ylim(-2, 2)
 plt.show()
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(-10, 10, 1000)
+def f(x):
+    return np.exp(-x/10) / (np.sin(x))
+
+y = f(x)
+plt.plot(x, y)
+plt.grid(True)
+plt.show()
+
+
+import numpy as np  
+import matplotlib.pyplot as plt 
+def f(x):
+    return 1/x-2
+y = f(x)
+np.setdiff1d(np.linspace(-5, 5, 1000),[0])
+plt.plot(x, y)
+plt.grid(True)
+plt.ylim(-10, 10)
+plt.legend(True)
+plt.xlim(-5, 5)
+plt.show()
+
+
+
+
+import numpy as np      
+import matplotlib.pyplot as plt 
+
+x = np.linspace(-10, 10, 1000)
+def f(x):   
+    return 1/np.sqrt(2*np.pi)*np.exp((x-3)**2/2)
+y = f(x)
+plt.plot(x, y)
+plt.grid(True)
+plt.ylim(-10, 100)
+plt.xlim(-2, 8)
+plt.axvline(x=3, color='red', linestyle='--')
+plt.show()
+
+import numpy as np      
+import matplotlib.pyplot as plt 
+x = np.linspace(-10, 10, 1000)  
+def f(x):
+    return -x**4+3*x**3
+y = f(x)
+plt.plot(x, y, label='f(x)', linewidth=1, color='blue')    
+plt.ylim(-100,30)
+plt.xlim(-10, 10)
+plt.axhline(y=3, color='red', linestyle='--')
+plt.grid(True)
+
+plt.show()
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define the function f(x)
+def f(x):
+    if 1 <= x < 3:
+        return 1
+    elif 3 <= x < 5:
+        return 2
+    elif 5 <= x < 7:
+        return 3
+    else:
+        return np.nan
+
+# Generate x values from 0 to 8
+x = np.linspace(0, 8, 1000)
+
+# Calculate y values for f(x)
+y = [f(xi) for xi in x]
+
+# Plot the function
+plt.plot(x, y)
+
+# Add a title and axis labels
+plt.title('Piecewise Function')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.grid(True)  
+# Show the plot
+plt.show()
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define the function f(x)
+def f(x):
+    return x**3 + 2
+
+# Define the inverse function of f(x)
+def inv_f(x):
+    return np.cbrt(x - 2)
+
+# Generate x values from -10 to 10
+x = np.linspace(-10, 10, 1000)
+
+# Calculate y values for f(x) and f^{-1}(x)
+y1 = f(x)
+y2 = inv_f(x)
+
+# Plot the functions
+plt.plot(x, y1, label='f(x)')
+plt.plot(x, y2, label='f$^{-1}$(x)')
+
+# Set the x and y limits to be equal
+plt.xlim(-10, 10)
+plt.ylim(-10, 10)
+plt.gca().set_aspect('equal', adjustable='box')
+
+# Add a legend
+plt.legend()
+
+# Add a title and axis labels
+plt.title('Function and Its Inverse')
+plt.xlabel('x')
+plt.ylabel('y')
+
+# Show the plot
+plt.show()

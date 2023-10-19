@@ -315,6 +315,7 @@ plt.legend()
 plt.title('Function and Its Inverse')
 plt.xlabel('x')
 plt.ylabel('y')
+#plt.savefig('inverse.eps', format='eps')
 
 # Show the plot
 plt.show()

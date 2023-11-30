@@ -1,3 +1,7 @@
+import numpy as np  
+import matplotlib.pyplot as plt 
+import pandas as pd 
+
 #################### ARMA class ####################
 class ARMA:
     ### Q:if p,q 的長度不等於 phi,theta 的長度，會報錯

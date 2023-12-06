@@ -1,6 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+###ar= AR(0.5, epsilon=lambda n: np.random.normal(0, 1, n), Y0=[0])
+###ar.simulate_nPeriods(100)
+###ar.statistics()
+#  
 #################### ARMA class ####################
 class AR:
     def __init__(self, *args, epsilon, Y0):

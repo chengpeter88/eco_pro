@@ -1,7 +1,7 @@
 import numpy as np  
 import matplotlib.pyplot as plt 
 import pandas as pd 
-
+from scipy.optimize import minimize
 #################### ARMA class ####################
 class ARMA:
     ### Q:if p,q 的長度不等於 phi,theta 的長度，會報錯
@@ -34,12 +34,15 @@ class ARMA:
     def save(self, file_name):
         save(self, file_name)
 
+    def fit(self, data):
+        fit(self, data)
+
 
 
 
 
 #################### ARMA hepler function ####################
-
+  
 def simulate(arma, n=1):
     X = np.zeros(n)
     for t in range(n):
@@ -78,3 +81,16 @@ def save(arma, file_name):
         df.to_csv(file_name, index=False)
     else:
         raise ValueError("file_name must end with .xlsx or .txt or .csv")
+    
+def fit(arma, data):
+        # Define the objective function for the optimizer
+    def objective(params):
+        arma.phi,arma.theta, arma.c, arma.mu, arma.sigma = params[:arma.p], params[arma.p:arma.p+arma.q], params[-3], params[-2], params[-1]
+        simulated_data = arma.simulate(len(data))
+        return np.sum((data - simulated_data)**2)
+
+        # Use an optimizer to find the parameters that minimize the objective function
+    initial_guess = np.concatenate([arma.phi, arma.theta, [arma.c, arma.mu, arma.sigma]])
+    result = minimize(objective, initial_guess)
+    arma.phi, arma.theta, arma.c, arma.mu, arma.sigma = result.x[:arma.p], result.x[arma.p:arma.p+arma.q], result.x[-3], result.x[-2], result.x[-1]
+    
